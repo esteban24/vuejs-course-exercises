@@ -3,11 +3,11 @@ const store = new Vuex.Store({
         number: 10
     },
     mutations: {
-        plus(state) {
-            state.number++;
+        plus(state, quantity) {
+            state.number += quantity;
         },
-        minus(state) {
-            state.number--;
+        minus(state, quantity) {
+            state.number -= quantity;
         }
     }
 });
