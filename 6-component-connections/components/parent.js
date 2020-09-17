@@ -7,13 +7,15 @@ Vue.component('parent', {
                 <input type="text" v-model.text="inputPhrase" @keyup.enter="sendPhrase" placeholder="Write phrase and enter to pass to child"></input>
             </div>
             <hr>
-            <child :phrase="phraseSent"></child>
+            <h3>Child name: {{ childName }}</h3>
+            <child :phrase="phraseSent" @childName="childName = $event"></child>
         </div>
     `,
     data() {
         return {
             inputPhrase: '',
-            phraseSent: ''
+            phraseSent: '',
+            childName: ''
         }
     },
     methods: {
